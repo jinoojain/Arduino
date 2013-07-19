@@ -1,3 +1,8 @@
 Helpful Documents
 
 
+Driving motors:
+
+http://arduino.cc/en/Tutorial/SecretsOfArduinoPWM
+http://arduino.cc/en/Reference/analogWrite
+
