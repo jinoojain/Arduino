@@ -2,7 +2,7 @@
 
 int pwmPin = 6; // PWM for our single motor for now
 int dirPin = 8; // toggle direction
-int value;
+int value = 0;
 
 int power;
 void setup() {
