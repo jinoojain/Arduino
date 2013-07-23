@@ -6,6 +6,9 @@ Driving motors:
 http://arduino.cc/en/Tutorial/SecretsOfArduinoPWM
 http://arduino.cc/en/Reference/analogWrite
 
+Serial.read() for strings:
+http://forum.arduino.cc/index.php/topic,45629.0.html
+
 From our own ME department:
 
 http://www.me.berkeley.edu/ME102B/lab3.html (Haven't actually read this yet... may be useful)
@@ -15,3 +18,4 @@ http://www.me.berkeley.edu/ME102B/lab3.html (Haven't actually read this yet... m
 Starting out with xbees: 
 
 http://bildr.org/2011/04/arduino-xbee-wireless/
+https://code.google.com/p/xbee-arduino/source/browse/#svn%2Ftrunk%2Fexamples%2FSeries1_Rx
