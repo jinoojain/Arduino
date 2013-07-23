@@ -1,6 +1,6 @@
 Helpful Documents
 
-
+*****************************************************
 Driving motors:
 
 http://arduino.cc/en/Tutorial/SecretsOfArduinoPWM
@@ -9,3 +9,9 @@ http://arduino.cc/en/Reference/analogWrite
 From our own ME department:
 
 http://www.me.berkeley.edu/ME102B/lab3.html (Haven't actually read this yet... may be useful)
+
+
+******************************************************
+Starting out with xbees: 
+
+http://bildr.org/2011/04/arduino-xbee-wireless/
