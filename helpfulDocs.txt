@@ -13,6 +13,14 @@ From our own ME department:
 
 http://www.me.berkeley.edu/ME102B/lab3.html (Haven't actually read this yet... may be useful)
 
+For the SN754410 DIP:
+
+http://itp.nyu.edu/physcomp/Labs/DCMotorControl
+
+For the TI DRV8833:
+
+http://www.pololu.com/catalog/product/2130
+
 
 ******************************************************
 Starting out with xbees: 
