@@ -18,6 +18,7 @@ void loop() {
   while(Serial.available()){
    char value = Serial.read();
    
+   // FORWARD CONTROLS
    if (value=='q'||value=='w'||value=='e'){
      digitalWrite(dirPin, HIGH);
      if (value=='q'){
@@ -33,6 +34,8 @@ void loop() {
        Serial.println("Forward fast");
      }
    }
+   
+   // BACKWARDS CONTROLS
    else if (value=='a'||value=='s'||value=='d'){
      digitalWrite(dirPin, LOW);
      if (value=='a'){
@@ -48,11 +51,15 @@ void loop() {
        Serial.println("Backwards fast");
      }
    }
+   
+   //STOP
    else if (value == 'x'){
      digitalWrite(dirPin, HIGH);
      analogWrite(pwmPin,0);
      Serial.println("Stop");
    }
+   
+   //UNRECOGNIZED COMMAND
    else if (value!='q'||value!='w'||value!='e'||value!='a'||value!='s'||value!='d'||value!='x'){
      Serial.println("Unknown Command");
    }
