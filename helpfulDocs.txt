@@ -21,6 +21,11 @@ For the TI DRV8833:
 
 http://www.pololu.com/catalog/product/2130
 
+for the LMD18200 in particular:
+
+http://www.spickles.org/images/lmd18200/lmd18200_schematic.jpg
+
+
 
 ******************************************************
 Starting out with xbees: 
