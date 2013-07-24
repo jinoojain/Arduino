@@ -22,39 +22,39 @@ void loop() {
      digitalWrite(dirPin, HIGH);
      if (value=='q'){
        analogWrite(pwmPin, 50);
+       Serial.println("Forward slow");
      }
      if (value=='w'){
-       analogWrite(pwnPin, 100);
+       analogWrite(pwmPin, 100);
+       Serial.println("Forward moderate");
      }
-     else{
+     if (value=='e'){
        analogWrite(pwmPin, 200);
+       Serial.println("Forward fast");
      }
    }
-   if (value=='a'||value=='s'||value=='d'){
+   else if (value=='a'||value=='s'||value=='d'){
      digitalWrite(dirPin, LOW);
      if (value=='a'){
        analogWrite(pwmPin, 50);
+       Serial.println("Backwards slow");
      }
      if (value=='s'){
-       analogWrite(pwnPin, 100);
+       analogWrite(pwmPin, 100);
+       Serial.println("Backwards moderate");
      }
-     else{
+     if (value =='d'){
        analogWrite(pwmPin, 200);
+       Serial.println("Backwards fast");
      }
    }
-   if (value == 'x'){
+   else if (value == 'x'){
      digitalWrite(dirPin, HIGH);
      analogWrite(pwmPin,0);
+     Serial.println("Stop");
    }
-   else{
+   else if (value!='q'||value!='w'||value!='e'||value!='a'||value!='s'||value!='d'||value!='x'){
      Serial.println("Unknown Command");
    }
-   
   }    // end while
-  Serial.print("inputed value: ");
-  Serial.println(value);
-  
 }
-
-
-
