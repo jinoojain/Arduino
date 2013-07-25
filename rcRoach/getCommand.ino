@@ -33,8 +33,18 @@ void getCommand(){
      case 'x':
        motorOutput(0,false);
        break;
+     case 'r':
+       myservo.write(180);
+       break;
+     case 'f':
+       myservo.write(0);
+       break;
+     case 'v':
+       myservo.write(90);
+       break;  
      default:
        Serial.println("please input valid command: q,w,e or a,s,d. x to stop");
+       Serial.println("r to turn servo one way, f to turn it the other way");
    }
      
   }    // end while
