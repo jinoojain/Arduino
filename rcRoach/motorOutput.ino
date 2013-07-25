@@ -1,21 +1,5 @@
-int input1 = 10; 
-int input2 = 11; 
-
-
-void setup() {
- 
-  pinMode(input1,OUTPUT);
-  pinMode(input2,OUTPUT);
-  
-
-}
-
-void loop() {  
-  
-  //motorOutput(255,true);
-    analogWrite(input1, 150);
-    digitalWrite(input2, LOW);
-}
+// code to control the motors. 
+// currently set up to work with the Pololu - DRV8833 motor driver
 
 void motorOutput(int speed, boolean direction) {
 
@@ -30,4 +14,3 @@ void motorOutput(int speed, boolean direction) {
     digitalWrite(input1, LOW);
   }
 }
-
