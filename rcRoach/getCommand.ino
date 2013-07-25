@@ -9,12 +9,11 @@ void getCommand(){
   
   while(Serial.available()){
    char value = Serial.read();
-   
+   // chose no lin
    switch (value)
    {
      case 'q': 
        motorOutput(  slow,false );
-       Serial.println("slow, false");
        break;       
      case 'w':
        motorOutput( medio ,false );
