@@ -23,12 +23,15 @@ void getCommand(){
        break;
      case 'a':
        motorOutput( slow ,true );
+       Serial.println("going in other direction");
        break;
      case 's':
        motorOutput( medio ,true );
+       Serial.println("going in other direction");
        break;
      case 'd':
        motorOutput( fast ,true );
+       Serial.println("going in other direction");
        break;
      case 'x':
        motorOutput(0,false);
