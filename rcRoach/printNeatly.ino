@@ -1,4 +1,4 @@
-  void printNeatly(){
+void printNeatly(){
   
   Serial.print("A ");
   Serial.print("X: ");
@@ -20,7 +20,7 @@
   Serial.println(" ");
   
   delay(100);
-  
-  }
+
+}
   
 

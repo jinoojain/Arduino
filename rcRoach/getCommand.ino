@@ -3,8 +3,8 @@
 void getCommand(){
   
   // define our speeds
-  int slow = 60;
-  int medio= 125;
+  int slow = 100;
+  int medio= 150;
   int fast = 200;
   
   while(Serial.available()){
@@ -14,36 +14,43 @@ void getCommand(){
    {
      case 'q': 
        motorOutput(  slow,false );
+       Serial.println("Forward slow");
        break;       
      case 'w':
        motorOutput( medio ,false );
+       Serial.println("Forward moderate");
        break;
      case 'e':
        motorOutput( fast ,false );
+       Serial.println("Forward fast");
        break;
      case 'a':
        motorOutput( slow ,true );
-       Serial.println("going in other direction");
+       Serial.println("Backwards slow");
        break;
      case 's':
        motorOutput( medio ,true );
-       Serial.println("going in other direction");
+       Serial.println("Backwards moderate");
        break;
      case 'd':
        motorOutput( fast ,true );
-       Serial.println("going in other direction");
+       Serial.println("Backwards fast");
        break;
      case 'x':
        motorOutput(0,false);
+       Serial.println("STOP");
        break;
      case 'r':
-       myservo.write(180);
+       myservo.write(0);
+       Serial.println("0 degrees");
        break;
      case 'f':
-       myservo.write(0);
+       myservo.write(90);
+       Serial.println("90 degrees");
        break;
      case 'v':
-       myservo.write(90);
+       myservo.write(180);
+       Serial.println("180 degrees");
        break;  
      default:
        Serial.println("please input valid command: q,w,e or a,s,d. x to stop");

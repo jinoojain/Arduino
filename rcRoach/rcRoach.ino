@@ -19,7 +19,7 @@ LSM303 compass;
 int pos = 0;
 
 void setup() {
-  myservo.attach(9);
+  myservo.attach(6);
   pinMode(input1,OUTPUT);
   pinMode(input2,OUTPUT);  
   Serial.begin(9600);
