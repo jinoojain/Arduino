@@ -1,5 +1,10 @@
 // get the char from the string.  Do appropriate things to it
-
+/**************************
+* COMMAND SET
+* 
+*
+*
+***************************/
 void getCommand(){
   
   // define our speeds
@@ -41,8 +46,9 @@ void getCommand(){
        Serial.println("STOP");
        break;
      case 'r':
-       myservo.write(0);
-       myservo2.write(90);
+       myservo.write(30);
+       
+       myservo2.write(70);
        Serial.println("0 degrees");
        break;
      case 'f':
