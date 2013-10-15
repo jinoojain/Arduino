@@ -10,72 +10,70 @@
 * - press 's' to initate flip
 ***************************/
 
+//USE MAP FUNCTION TO MAKE LIFE EASIER EVENTUALLY 
+
 void presetFlips(){
+ 
   // define values
   int motorSpeed;
   int servoSpeed;
   boolean motorDirection;
   int servoStart;
   int servoEnd;
- 
-  // define our speeds
-  int slow = 100;
-  int medio= 150;
-  int fast = 200;
   
   while(Serial.available()){
-   char value = Serial.read();
-   // chose no lin
-   switch (value)
-   {
-     case 'q': 
-       motorOutput(  slow,false );
-       Serial.println("Forward slow");
-       break;       
-     case 'w':
-       motorOutput( medio ,false );
-       Serial.println("Forward moderate");
-       break;
-     case 'e':
-       motorOutput( fast ,false );
-       Serial.println("Forward fast");
-       break;
-     case 'a':
-       motorOutput( slow ,true );
-       Serial.println("Backwards slow");
-       break;
-     case 's':
-       motorOutput( medio ,true );
-       Serial.println("Backwards moderate");
-       break;
-     case 'd':
-       motorOutput( fast ,true );
-       Serial.println("Backwards fast");
-       break;
-     case 'x':
-       motorOutput(0,false);
-       Serial.println("STOP");
-       break;
-     case 'r':
-       myservo.write(30);
-       
-       myservo2.write(70);
-       Serial.println("0 degrees");
-       break;
-     case 'f':
-       myservo.write(45);
-       myservo2.write(45);
-       Serial.println("45 degrees");
-       break;
-     case 'v':
-       myservo.write(90);
-       myservo2.write(0);
-       Serial.println("90 degrees");
-       break;  
-     default:
-       Serial.println("please input valid command: q,w,e or a,s,d. x to stop");
-       Serial.println("r to turn servo one way, f to turn it the other way");
-   }
-     
-  }    // end while
-}
+    Serial.println("Press 'p' for preset flip or 'c' for custom flip");
+    char choice = Serial.read();
+    if (choice == 'p'){
+      // STANDARD FLIP
+    }
+    else if (choice == 'c'){
+      // CUSTOM FLIP CONTROL FLOW
+      
+      // Motor Speed
+      Serial.println("Motor Speed: Enter an int between 100-200, or 0 for no motor");
+      int motorSpeed = Serial.read();
+      
+      //Motor Direction (only if motor is on)
+      if (motorSpeed != 0){
+        Serial.println("Motor Direction: Press 'f' for forwards, 'b' for backwards");
+        char choiceTwo = Serial.read();
+        if (choiceTwo == 'f'){
+          boolean motorDirection = false;
+        }
+        if (choiceTwo == 'b'){
+          boolean motorDirection = true;
+        }
+      }
+      
+      //Servo Speed
+      Serial.println("Servo Speed: Enter an int between __ - __");
+      int servoSpeed = Serial.read();
+      //DO SERVO SPEED STUFF 
+      
+      //Servo Angles
+      Serial.println("Servo Start Angle: Enter an int between 0-90");
+      int servoStart = Serial.read();
+      Serial.println("Servo End Angle: Enter an int between 0-90");
+      int servoEnd = Serial.read();
+      
+      //Initate Flip
+      Serial.println("Press 's' to start flip");
+      char start = Serial.read();
+      if (start == 's'){
+        //EXECUTE CUSTOM FLIP***
+      }
+      else{
+        Serial.println("Boo you suck");
+      }
+    }  //end else if
+    else {
+      Serial.println("You failed; try again");
+    }
+  }  // end while
+}  // end presetFlips
+      
+  
+      
+      
+
