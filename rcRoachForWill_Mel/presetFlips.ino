@@ -1,12 +1,23 @@
-// get the char from the string.  Do appropriate things to it
+// Either initate the preset flip command, or follow the prompt for a custom flip
 /**************************
-* COMMAND SET
-* 
-*
-*
+* Control flow:
+* - press 'p' for preset flip or 'c' for custom flip
+* - motor speed: enter an int between 100-200
+* - motor direction: press 'f' for forwards, 'b' for backwards
+* - servo speed: enter an int between ___-___
+* - servo start angle: enter an int between 0-90
+* - servo end angle: enter an int between 0-90
+* - press 's' to initate flip
 ***************************/
-void getCommand(){
-  
+
+void presetFlips(){
+  // define values
+  int motorSpeed;
+  int servoSpeed;
+  boolean motorDirection;
+  int servoStart;
+  int servoEnd;
+ 
   // define our speeds
   int slow = 100;
   int medio= 150;
@@ -17,7 +28,6 @@ void getCommand(){
    // chose no lin
    switch (value)
    {
-     
      case 'q': 
        motorOutput(  slow,false );
        Serial.println("Forward slow");

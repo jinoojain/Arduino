@@ -1,7 +1,6 @@
 //rcRoach
 // disable all sensing. only have RC 
 #include <Wire.h>
-
 #include <Servo.h>
 
 
@@ -22,9 +21,6 @@ void setup() {
   pinMode(input1,OUTPUT);
   pinMode(input2,OUTPUT);  
   Serial.begin(9600);
-  
-
-
   
 }
 void loop() {  
