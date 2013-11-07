@@ -25,7 +25,8 @@ void presetFlips(){
     Serial.println("Press 'p' for preset flip or 'c' for custom flip");
     char choice = Serial.read();
     if (choice == 'p'){
-      // STANDARD FLIP
+      // STANDARD FLIP DEFAULT VALUES
+      customFlip(int motorSpeed = 150, int servoSpeed =20 , boolean motorDirection = false, int servoStart=0, int servoEnd=90);
     }
     else if (choice == 'c'){
       // CUSTOM FLIP CONTROL FLOW
@@ -47,9 +48,10 @@ void presetFlips(){
       }
       
       //Servo Speed
-      Serial.println("Servo Speed: Enter an int between __ - __");
+      Serial.println("Servo Speed: Enter an int between 0 - 30");
       int servoSpeed = Serial.read();
-      //DO SERVO SPEED STUFF 
+      
+      //Servo speed: delay between 10ms and 40ms
       
       //Servo Angles
       Serial.println("Servo Start Angle: Enter an int between 0-90");
@@ -61,7 +63,7 @@ void presetFlips(){
       Serial.println("Press 's' to start flip");
       char start = Serial.read();
       if (start == 's'){
-        //EXECUTE CUSTOM FLIP***
+        customFlip(int motorSpeed, int servoSpeed, boolean motorDirection, int servoStart, int servoEnd);
       }
       else{
         Serial.println("Boo you suck");
