@@ -25,6 +25,6 @@ void setup() {
 }
 void loop() {  
 
-    getCommand();  
+    presetFlips();  
 
 }

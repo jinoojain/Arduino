@@ -9,8 +9,7 @@
 * - servo end angle: enter an int between 0-90
 * - press 's' to initate flip
 ***************************/
-
-//USE MAP FUNCTION TO MAKE LIFE EASIER EVENTUALLY 
+//Consider using map function to make speed conversions easier 
 
 void presetFlips(){
  
@@ -26,15 +25,16 @@ void presetFlips(){
     char choice = Serial.read();
     if (choice == 'p'){
       // STANDARD FLIP DEFAULT VALUES
-      customFlip(int motorSpeed = 150, int servoSpeed =20 , boolean motorDirection = false, int servoStart=0, int servoEnd=90);
+      customFlip(motorSpeed = 150, servoSpeed =20 , motorDirection = false, servoStart=0, servoEnd=180);
     }
     else if (choice == 'c'){
       // CUSTOM FLIP CONTROL FLOW
       
       // Motor Speed
       Serial.println("Motor Speed: Enter an int between 100-200, or 0 for no motor");
-      int motorSpeed = Serial.read();
-      
+      if (Serial.available() > 0){
+        int motorSpeed = Serial.read();
+      }
       //Motor Direction (only if motor is on)
       if (motorSpeed != 0){
         Serial.println("Motor Direction: Press 'f' for forwards, 'b' for backwards");
@@ -63,7 +63,7 @@ void presetFlips(){
       Serial.println("Press 's' to start flip");
       char start = Serial.read();
       if (start == 's'){
-        customFlip(int motorSpeed, int servoSpeed, boolean motorDirection, int servoStart, int servoEnd);
+        customFlip(motorSpeed, servoSpeed, motorDirection, servoStart, servoEnd);
       }
       else{
         Serial.println("Boo you suck");
